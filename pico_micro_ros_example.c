@@ -16,6 +16,8 @@
 robot picobot;
 state current_state = STOP;
 
+//comment
+
 rcl_subscription_t subscriber;
 rcl_subscription_t subscriber_move;
 rcl_publisher_t publisher;
