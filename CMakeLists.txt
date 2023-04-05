@@ -15,6 +15,7 @@ add_executable(pico_micro_ros_example
     pico_micro_ros_example.c
     pico_wifi_transport.c
     librobot/motor.c
+    librobot/robot.c
 )
 target_link_libraries(pico_micro_ros_example
     pico_stdlib

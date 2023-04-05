@@ -5,23 +5,21 @@
 #include "hardware/pwm.h"
 #include "librobot/motor.h"
 
-enum state
+typedef enum
 {
     STOP,
     FORWARD,
     RIGHT,
     BACKWARD,
     LEFT
-};
+} state;
 
 typedef struct robot
 {
-    motor *motor_left;
-    motor *motor_right;
-    state state = STOP;
+    motor motor_left;
+    motor motor_right;
+    state state;
 } robot;
-
-void init_robot(robot *robot, motor *motor_left, motor *motor_right);
 
 void forward_robot(robot *robot, int speed);
 
