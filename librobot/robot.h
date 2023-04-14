@@ -4,6 +4,7 @@
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
 #include "librobot/motor.h"
+#include "librobot/sensor.h"
 
 typedef enum
 {
@@ -16,9 +17,11 @@ typedef enum
 
 typedef struct robot
 {
+    state state;
     motor motor_left;
     motor motor_right;
-    state state;
+    sensor wall;
+    sensor ground;
 } robot;
 
 void forward_robot(robot *robot, int speed);
@@ -30,5 +33,7 @@ void left_robot(robot *robot, int speed);
 void right_robot(robot *robot, int speed);
 
 void brake_robot(robot *robot);
+
+uint8_t read_sensors(sensor *wall, sensor *ground);
 
 #endif

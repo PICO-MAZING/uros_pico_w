@@ -1,4 +1,5 @@
 #include "robot.h"
+#include <stdio.h>
 
 void forward_robot(robot *robot, int speed)
 {
@@ -28,4 +29,13 @@ void brake_robot(robot *robot)
 {
     brake_motor(&robot->motor_left);
     brake_motor(&robot->motor_right);
+}
+
+uint8_t read_sensors(sensor *wall, sensor *ground)
+{
+    uint8_t wall_data = read_sensor(wall);
+    uint8_t ground_data = read_sensor(ground);
+    printf("m: %d - g: %d ", wall_data, ground_data);
+
+    return (wall_data << 3) + ground_data;
 }
