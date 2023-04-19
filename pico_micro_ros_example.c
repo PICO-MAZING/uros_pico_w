@@ -58,8 +58,6 @@ void subscription_callback(const void *msgin)
 {
     const std_msgs__msg__Int8 *msg = (const std_msgs__msg__Int8 *)msgin;
 
-    // printf("RECEIVED: %d", msg->data);
-
     current_state = msg->data;
 }
 
