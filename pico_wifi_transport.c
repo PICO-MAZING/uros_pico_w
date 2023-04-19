@@ -84,7 +84,7 @@ size_t pico_wifi_transport_write(struct uxrCustomTransport *transport, const uin
 
     if (er != ERR_OK)
     {
-        printf("Erreur write");
+        printf("Writing error");
         return 0;
     }
     // struct udp_pcb *tpcb = udp_new();
@@ -116,7 +116,7 @@ static void udp_recv_callback(void *arg, struct udp_pcb *pcb,
     struct transport_buffer *transport_buffer = (struct transport_buffer *)arg;
     memcpy(transport_buffer->buf, p->payload, p->len);
     pbuf_free(p);
-    printf("MSG RCV");
+    // printf("MSG RCV");
     transport_buffer->packet_received = true;
     // return;
 }
@@ -139,10 +139,12 @@ size_t pico_wifi_transport_read(struct uxrCustomTransport *transport, uint8_t *b
         elapsed_time_us = timeout * 1000 - (time_us_64() - start_time_us);
     }
 
-    if (transport_buffer.packet_received)
-    {
-        printf("PACKET RECEIVED");
-    }
+    /*
+        if (transport_buffer.packet_received)
+        {
+            printf("PACKET RECEIVED");
+        }
+    */
 
     // printf("Good");
 

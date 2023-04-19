@@ -9,11 +9,14 @@ void init_motor(motor *motor, int clockwise_pin,
 
     gpio_init(motor->clockwise_pin);
     gpio_set_dir(motor->clockwise_pin, GPIO_OUT);
+    gpio_pull_up(motor->clockwise_pin);
 
     gpio_init(motor->counterclockwise_pin);
     gpio_set_dir(motor->counterclockwise_pin, GPIO_OUT);
+    gpio_pull_up(motor->counterclockwise_pin);
 
     gpio_set_function(motor->pwm_pin, GPIO_FUNC_PWM);
+    gpio_pull_up(motor->pwm_pin);
     uint slice_num = pwm_gpio_to_slice_num(motor->pwm_pin);
     pwm_set_wrap(slice_num, MAX_CYCLES);
     pwm_set_gpio_level(motor->pwm_pin, 0);
