@@ -6,7 +6,7 @@
 
 #define MAX_CYCLES 256
 
-typedef struct motor
+typedef struct
 {
     uint8_t clockwise_pin;
     uint8_t counterclockwise_pin;

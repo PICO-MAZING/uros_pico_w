@@ -14,7 +14,7 @@
 #include "librobot/robot.h"
 
 robot picobot;
-state current_state = STOP;
+action current_state = STOP;
 
 // comment
 rcl_publisher_t publisher;
@@ -50,10 +50,10 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
         left_robot(&picobot, 45);
         break;
     case DUCK_LEFT:
-        duck_left_robot(&picobot, 45);
+        duck_left_robot(&picobot, 50);
         break;
     case DUCK_RIGHT:
-        duck_right_robot(&picobot, 45);
+        duck_right_robot(&picobot, 50);
         break;
     default:
         break;

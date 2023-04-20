@@ -3,7 +3,7 @@
 
 #include "hardware/gpio.h"
 
-typedef struct sensor
+typedef struct
 {
     uint8_t left;
     uint8_t middle;

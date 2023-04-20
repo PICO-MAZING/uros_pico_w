@@ -15,11 +15,11 @@ typedef enum
     LEFT,
     DUCK_LEFT,
     DUCK_RIGHT
-} state;
+} action;
 
-typedef struct robot
+typedef struct
 {
-    state state;
+    action state;
     motor motor_left;
     motor motor_right;
     sensor wall;

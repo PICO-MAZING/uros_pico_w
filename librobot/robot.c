@@ -21,7 +21,7 @@ void left_robot(robot *robot, int speed)
 
 void duck_left_robot(robot *robot, int speed)
 {
-    brake_motor(&robot->motor_left);
+    stop_motor(&robot->motor_left);
     forward_motor(&robot->motor_right, speed);
 }
 
@@ -34,7 +34,7 @@ void right_robot(robot *robot, int speed)
 void duck_right_robot(robot *robot, int speed)
 {
     forward_motor(&robot->motor_left, speed);
-    brake_motor(&robot->motor_right);
+    stop_motor(&robot->motor_right);
 }
 
 void brake_robot(robot *robot)
