@@ -12,7 +12,9 @@ typedef enum
     FORWARD,
     RIGHT,
     BACKWARD,
-    LEFT
+    LEFT,
+    DUCK_LEFT,
+    DUCK_RIGHT
 } state;
 
 typedef struct robot
@@ -30,7 +32,11 @@ void backward_robot(robot *robot, int speed);
 
 void left_robot(robot *robot, int speed);
 
+void duck_left_robot(robot *robot, int speed);
+
 void right_robot(robot *robot, int speed);
+
+void duck_right_robot(robot *robot, int speed);
 
 void brake_robot(robot *robot);
 

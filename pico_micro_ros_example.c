@@ -49,6 +49,12 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
     case LEFT:
         left_robot(&picobot, 45);
         break;
+    case DUCK_LEFT:
+        duck_left_robot(&picobot, 45);
+        break;
+    case DUCK_RIGHT:
+        duck_right_robot(&picobot, 45);
+        break;
     default:
         break;
     }
