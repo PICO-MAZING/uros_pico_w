@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: mkdir build
+      run: mkdir build
     - name: cd build
       run: cd build
     - name: cmake ..
