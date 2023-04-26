@@ -1,0 +1,27 @@
+name: CMake Workflow
+
+on:
+  push:
+    branches: [ main ]  # Déclencher le workflow lorsque des modifications sont apportées à la branche principale
+  pull_request:
+    branches: [ main ]  # Déclencher le workflow lorsque des modifications sont apportées à une pull request sur la branche principale
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2  # Vérifie le dépôt
+
+    - name: Create Build Directory
+      run: mkdir build  # Créer un répertoire build
+
+    - name: Change Directory to Build
+      run: cd build  # Changer de répertoire vers build
+
+    - name: Configure CMake
+      run: cmake ..  # Configurer CMake
+
+    - name: Build Project
+      run: make  # Compiler le projet
