@@ -21,7 +21,7 @@ jobs:
       run: cd build  # Changer de répertoire vers build
 
     - name: Configure CMake
-      run: cmake ..  # Configurer CMake
+      run: cmake -S ../ -B . # Configurer CMake
 
     - name: Build Project
       run: make  # Compiler le projet
