@@ -69,12 +69,7 @@ void subscription_callback(const void *msgin)
 
 int main()
 {
-    // set_microros_wifi_transports("BassAdict", "$lap2023", "192.168.137.115", 4444);
-    // set_microros_wifi_transports("NETGEAR13", "purplefire019", "10.0.0.8", 4444);
-    // set_microros_wifi_transports("DLINK204-1", "eabux63999", "172.16.204.234", 4444);
-    // set_microros_wifi_transports("allan-VivoBook", "f5CgQFMa", "10.42.0.1", 4444);
-    // set_microros_wifi_transports("PICO_MAZING", "picowamazing", "172.24.0.1", 9999);
-    set_microros_wifi_transports("Livebox-3773", "A7A3172F32C6E36EF12E6AF91E", "192.168.1.23", 4444);
+    set_microros_wifi_transports("SSID", "PASSWORD", "PC IP ADDRESS", 4444);
 
     picobot.state = STOP;
     init_motor(&picobot.motor_left, 20, 19, 21);
